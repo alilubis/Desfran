@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Desfran.Models.Weather.Next_Days>
+<div class="text-center">
+    <h1 class="display-4">Weather</h1>
+
+    <table class="display" id="weather">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Day)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Max_temp!.C)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Max_temp!.F)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Day)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Max_temp!.C)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Max_temp!.F)
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
